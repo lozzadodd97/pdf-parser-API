@@ -34,8 +34,9 @@ poetry run python app.py
 TODO: Either create the postman collection files or replace testing method if using public hosting.
 
 Ensure the application is running locally.\
+Install Postman from: https://www.postman.com/downloads/ \
 Import the provided Postman collection for testing the API endpoints.\
-Send a POST request to http://localhost:5000/api/v1/extract with the PDF files contained in\
+Send a POST request to http://localhost:5000/api/v1/extract with the PDF files contained in 
 '\Programming Challenge Files' attached in the request body.
 
 ## Contributors
@@ -138,14 +139,12 @@ to replace the current local hosting using Postman.
 # Review Questions
 
 1. **Technical Choices**:
-   - Influence: Considered familiarity, research, and project requirements.
+    - What influenced your decision on the specific tools and models used?
 2. **Entity Contextualization**:
-   - Approach: Utilized NLP models to provide context for identified entities.
+   - How did you approach the problem of providing context for each identified entity?
 3. **Error Handling**:
-   - API handles errors through validation and structured responses.
+   - Can you describe how your API handles potential errors?
 4. **Challenges and Learnings**:
-   - Challenges: New frameworks/tools, decision-making.
-   - Learnings: Better understanding of Flask, NLP model selection.
+   - What were the top challenges faced, and what did you learn from them?
 5. **Improvement Propositions**:
-   - Additional features: Improved testing, error handling, and NLP model fine-tuning.
-
+   - Given more time, what improvements or additional features would you consider adding?
