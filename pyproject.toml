@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pdf parsing api endpoint"
+version = "0.1.0"
+description = ""
+authors = ["laurenced <l.dodd@psenterprise.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pymupdf = "^1.24.5"
+spacy = "^3.7.5"
+spacy-transformers = "^1.3.5"
+scispacy = "^0.5.4"
+flask = "^3.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
