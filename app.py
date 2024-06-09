@@ -2,10 +2,14 @@ from flask import Flask, request, jsonify
 import os
 from pdf_parsing import extract_text
 from semantic_analysis import analyze_and_contextualize
+from config import FLASK_ENV, DEBUG
 
 # Create the flask application object
 app = Flask(__name__)
 
+# Apply configurations
+app.config['ENV'] = FLASK_ENV
+app.config['DEBUG'] = DEBUG
 
 # Define the http request (url and method) and extraction function
 @app.route('/api/v1/extract', methods=['POST'])
@@ -26,9 +30,7 @@ def extract():
         return jsonify({"error": "Unsupported file type"}), 415
 
     try:
-        # TODO: Replace local folder path with temporary file creation using tempfile module
-        folder_path = r'C:\Users\z004kp4a\OneDrive - Siemens AG\Documents\Admin\1, 36-38 Mildmay Park\Other\Every Cure - Data Scientist\PDF parsing API endpoint\Programming Challenge Files'
-        file_path = os.path.join(folder_path, file.filename)
+        file_path = os.path.join('/tmp', file.filename)
         file.save(file_path)
 
         text = extract_text(file_path)
@@ -43,4 +45,4 @@ def extract():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

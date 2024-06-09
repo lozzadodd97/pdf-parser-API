@@ -1,8 +1,8 @@
 import spacy
+from config import SPACY_MODEL_NAME
 
-# Define the NLP model
-# nlp = spacy.load("en_core_sci_lg")
-nlp = spacy.load("en_ner_bc5cdr_md")
+# Define the NLP NER model specified in the config
+nlp = spacy.load(SPACY_MODEL_NAME)
 
 
 def analyze_and_contextualize(text):

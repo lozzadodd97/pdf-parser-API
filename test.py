@@ -6,3 +6,4 @@ folder_path = r'C:\Users\z004kp4a\OneDrive - Siemens AG\Documents\Admin\1, 36-38
 file_path = os.path.join(folder_path, file)
 text = extract_text(file_path)
 print(text)
+
