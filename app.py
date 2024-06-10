@@ -55,8 +55,8 @@ def extract():
             file_path = os.path.join(tmp_dir, file.filename)
             file.save(file_path)
             # Parse and contextualize
-            text = extract_text(file_path, nlp)
-            entities = analyze_and_contextualize(text)
+            text = extract_text(file_path)
+            entities = analyze_and_contextualize(text, nlp)
             # Add responses
             responses["results"].append({
                 "filename": file.filename,
