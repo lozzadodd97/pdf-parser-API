@@ -33,11 +33,11 @@ poetry run python app.py
 ```
 
 ### Testing with Postman
-- Ensure the application is running locally.\
+- Ensure the application is running locally.
 - Install Postman and create a free account: https://www.postman.com/downloads/ 
 - Import the provided Postman collection file ('API endpoint testing.postman_collection.json') for testing the API endpoints.
 - Send the POST request to http://localhost:5000/api/v1/extract - Note that the pdf testing files are all included in the form body. When the request completes, use the postman search bar in the pretty output to find 'filename', noting there are 6 instances and the contextualized entities of all files are also present.
-- To test the error handling, unselect all files and add two new files with the key 'file' to the form body. Add 'this_file_has_wrong_format.docx' and '.pdf' from '\Programming Challenge Files' attached in the request body. DISCLAIMER: Postman cloud uplaod did not work for these two files frustratingly, hence why you have to manually upload them sorry.
+- To test the error handling, unselect all files and add two new files with the key 'file' to the form body. Add 'this_file_has_wrong_format.docx' and '.pdf' from '\Programming Challenge Files' attached in the request body. DISCLAIMER: Postman cloud upload did not work for these two files frustratingly, hence why you have to manually upload them sorry.
 - Try to send the request with (a) no files, (b) .pdf and (c) this_file_has_wrong_format.docx, noting the differing error messages and codes.
 - Try to send the request with a working pdf file and one that will create an error, noting that the error code is returned and the file is not processed.
 
