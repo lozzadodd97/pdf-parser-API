@@ -2,6 +2,8 @@ def analyze_and_contextualize(text, nlp):
     """
     This function is used for semantic analysis of the PDF, specifically to
     contextualize medical literature with a focus on disease states and drugs.
+    :param nlp: contextualization NLP model
+    :type nlp: spacy object
     :param text: text returned from the parsed pdf
     :type text: string
     :return: entities
