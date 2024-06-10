@@ -8,11 +8,12 @@ model and returns them via an API endpoint.
 ### Cloning the Repository
 Clone the repository using the following command:
 ```console
-git clone -b "https://github.com/lozzadodd97/pdf-parser-API/"
+git clone -b main "https://github.com/lozzadodd97/pdf-parser-API/"
 cd pdf-parser-API
 ```
 
 ### Installation
+Install Flask for API development
 Install Poetry for dependency management (if not yet installed):
 ```console
 pip install poetry
