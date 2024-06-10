@@ -31,13 +31,17 @@ poetry run python app.py
 ```
 
 ### Testing with Postman
-TODO: Either create the postman collection files or replace testing method if using public hosting.
+- Ensure the application is running locally.\
+- Install Postman and create a free account: https://www.postman.com/downloads/ 
+- Import the provided Postman collection file ('API endpoint testing.postman_collection.json') for testing the API endpoints.
+- Send the POST request to http://localhost:5000/api/v1/extract - Note that the pdf testing files are all included in the form body. When the request completes, use the postman search bar in the pretty output to find 'filename', noting there are 6 instances and the contextualized entities of all files are also present.
+- To test the error handling, unselect all files and add two new files with the key 'file' to the form body. Add 'this_file_has_wrong_format.docx' and '.pdf' from '\Programming Challenge Files' attached in the request body. DISCLAIMER: Postman cloud uplaod did not work for these two files frustratingly, hence why you have to manually upload them sorry.
+- Try to send the request with (a) no files, (b) .pdf and (c) this_file_has_wrong_format.docx, noting the differing error messages and codes.
+- Try to send the request with a working pdf file and one that will create an error, noting that the error code is returned and the file is not processed.
 
-Ensure the application is running locally.\
-Install Postman from: https://www.postman.com/downloads/ \
-Import the provided Postman collection for testing the API endpoints.\
-Send a POST request to http://localhost:5000/api/v1/extract with the PDF files contained in 
-'\Programming Challenge Files' attached in the request body.
+Considerations:
+- It would be good to allow errors to be recorded for individual files and reported as currently the first file containing an error attached to the form will determine the only error code.
+- It may be better to allow any 'good' PDFs attached to still be processed, if desired behaviour.
 
 ## Contributors
 Laurence Dodd
@@ -109,30 +113,32 @@ to replace the current local hosting using Postman.
 - **Time Actual**: 1.5 hours
 ### Notes:
 - Evaluated two NLP models and chose based on contextualization quality.
-- TODO: Identify key issues with API response (order of start and end entities does nto match dictionary definition.
 
-## Work Item 4 – Finalize Requirements/Config/Readme, Push to Git
+## Work Item 4 – Provide a Robust Method of Testing the Application
+- **Time Estimate**: 30 minutes
+- **Time Actual**: 1 hour
+### Considerations:
+- Do testing in Postman, providing collection files for testing and instructions in documentation.
+- Make error handling of the api robust
+- Consider outputting key or common categories and information to the client application.
+- Allow api to process multiple files at once.
+### Notes:
+- Took longer than expected due to unfamiliarity of formatting responses using jsonify and overspent time improving the error handling and multiple file handling.
+
+## Work Item 5 – Finalize Requirements/Config/Readme, Push to Git
 - **Time Estimate**: 30 minutes
 - **Time Actual**: 1 hour
 ### Considerations:
 - Used README for documentation and MIT license for repository.
 - TODO: Create GitHub wiki page for full project documentation.
 ### Notes:
-- Took longer than expected to write documentation, as we typically publish in madcap and have not used markdown before, and I classically underestimated how long properly documenting work takes
+- Took longer than expected to write documentation, as we typically publish in madcap and have not used markdown before, and I classically underestimated how long properly documenting work takes/ should have done this as I went along.
 
-## Work Item 5 – Provide a Robust Method of Testing the Application
-- **Time Estimate**: 30 minutes
-- **Time Actual**: tbd
-### Considerations:
-- Consider adding a new endpoint for testing or writing test instructions.
-- Consider outputting key categories and information to the client application.
 
 ## Work Item 6 – Answer Review Questions
 - **Time Estimate**: 30 minutes
 - **Time Actual**: tbd
 
-## Contingency
-- **Time Estimate**: 30 minutes
 
 ---
 

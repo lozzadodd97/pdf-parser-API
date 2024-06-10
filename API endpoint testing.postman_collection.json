@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "03faaa56-1a6d-4fa6-bf16-c824e7b19ddb",
+		"name": "API endpoint testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36192009"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:5000/api/v1/extract",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1ef25b2b-f153-4820-afe1-f675be26030f"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1ef25b93-47a6-4a30-86cc-1e963481abdd"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1ef25b93-51b8-4c30-8e14-5376d5234705"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1ef25b93-6a31-4690-8f32-4443cc302ec1"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1ef25b93-a3f2-4910-92ec-5c87504500c2"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1ef270ec-e569-41a0-b23d-168a6f096825"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/extract",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"extract"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
