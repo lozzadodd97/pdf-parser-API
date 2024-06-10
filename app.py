@@ -1,8 +1,9 @@
-from flask import Flask, request, jsonify
 import os
+import spacy
+from flask import Flask, request, jsonify
 from pdf_parsing import extract_text
 from semantic_analysis import analyze_and_contextualize
-from config import FLASK_ENV, DEBUG
+from config import FLASK_ENV, DEBUG, SPACY_MODEL_NAME
 
 # Create the flask application object
 app = Flask(__name__)
@@ -10,6 +11,8 @@ app = Flask(__name__)
 # Apply configurations
 app.config['ENV'] = FLASK_ENV
 app.config['DEBUG'] = DEBUG
+nlp = spacy.load(SPACY_MODEL_NAME)
+
 
 # Define the http request (url and method) and extraction function
 @app.route('/api/v1/extract', methods=['POST'])
@@ -52,7 +55,7 @@ def extract():
             file_path = os.path.join(tmp_dir, file.filename)
             file.save(file_path)
             # Parse and contextualize
-            text = extract_text(file_path)
+            text = extract_text(file_path, nlp)
             entities = analyze_and_contextualize(text)
             # Add responses
             responses["results"].append({

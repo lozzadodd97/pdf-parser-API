@@ -1,11 +1,4 @@
-import spacy
-from config import SPACY_MODEL_NAME
-
-# Define the NLP NER model specified in the config
-nlp = spacy.load(SPACY_MODEL_NAME)
-
-
-def analyze_and_contextualize(text):
+def analyze_and_contextualize(text, nlp):
     """
     This function is used for semantic analysis of the PDF, specifically to
     contextualize medical literature with a focus on disease states and drugs.
