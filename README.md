@@ -13,15 +13,16 @@ cd pdf-parser-API
 ```
 
 ### Installation
-Install NLP NER models from Spacy used for semantic analysis:\
-(note: installing these models first avoids dependency conflicts)
+Install Poetry (if not yet installed) and install NLP NER models from Spacy used for semantic analysis:\
+(unresolved issue: NLP model must be installed to env before dependencies to avoid conflict)
 ```console
+pip install poetry
+poetry shell
 pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.4.0/en_ner_bc5cdr_md-0.4.0.tar.gz
 pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.4.0/en_core_sci_lg-0.4.0.tar.gz
 ```
-Install Poetry (if not yet installed) and build the env :
+Build the virtual env:
 ```console
-pip install poetry
 poetry install
 ```
 
