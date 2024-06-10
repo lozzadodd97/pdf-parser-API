@@ -13,16 +13,16 @@ cd pdf-parser-API
 ```
 
 ### Installation
-Install Flask for API development
-Install Poetry for dependency management (if not yet installed):
-```console
-pip install poetry
-poetry install
-```
-Install NLP NER models from Spacy used for semantic analysis:
+Install NLP NER models from Spacy used for semantic analysis:\
+(note: installing these models first avoids dependency conflicts)
 ```console
 pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.4.0/en_ner_bc5cdr_md-0.4.0.tar.gz
 pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.4.0/en_core_sci_lg-0.4.0.tar.gz
+```
+Install Poetry (if not yet installed) and build the env :
+```console
+pip install poetry
+poetry install
 ```
 
 ### Running the Application Locally
